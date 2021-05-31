@@ -35,7 +35,6 @@
     "lodash": "^4.17.15",
     "moment": "^2.27.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.7",
     "objection": "^2.2.14",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
@@ -57,10 +56,6 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
     "faker": "^5.5.3",
-    "http-terminator": "^3.0.0",
-    "mongodb-memory-server": "^6.6.1",
-    "prettier": "^1.19.1",
-    "rosie": "^2.0.1",
-    "supertest": "^4.0.2"
+    "prettier": "^1.19.1"
   }
 }
