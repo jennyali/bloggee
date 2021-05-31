@@ -10,6 +10,7 @@
     "start": "concurrently \"yarn start:server\" \"yarn start:client\"",
     "start:server": "node server/index.js",
     "start:client": "cd client && yarn start",
+    "storybook": "cd client && yarn storybook",
     "migrate:make": "node -r ./server/env.js ./node_modules/.bin/knex --knexfile ./server/knexfile.js migrate:make",
     "migrate:latest": "node -r ./server/env.js ./node_modules/.bin/knex --knexfile ./server/knexfile.js migrate:latest",
     "migrate:rollback": "node -r ./server/env.js ./node_modules/.bin/knex --knexfile ./server/knexfile.js migrate:rollback",

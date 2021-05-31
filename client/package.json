@@ -8,6 +8,8 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "classnames": "^2.3.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -17,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -30,17 +34,22 @@
       "prettier"
     ],
     "rules": {
+      "react/jsx-props-no-spreading": "off",
       "react/react-in-jsx-scope": "off",
+      "react/no-unescaped-entities": "off",
       "react/jsx-filename-extension": "off",
       "prettier/prettier": [
         "error"
       ],
+      "arrow-body-style": "off",
+      "prefer-arrow-callback": "off",
       "linebreak-style": 0,
       "no-console": "warn",
       "no-use-before-define": "error",
       "no-continue": "off",
       "class-methods-use-this": "off",
       "no-underscore-dangle": "off",
+      "import/prefer-default-export": "off",
       "import/no-extraneous-dependencies": [
         "error",
         {
@@ -53,7 +62,17 @@
     "env": {
       "browser": true
     },
-    "root": true
+    "root": true,
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   },
   "browserslist": {
     "production": [
@@ -68,6 +87,13 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-knobs": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/node-logger": "^6.2.9",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.2.9",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "18.2.1",
