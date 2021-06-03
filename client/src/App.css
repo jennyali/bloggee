@@ -1,10 +1,3 @@
-:root {
-  --color-primary: rgb(163, 13, 83);
-  --color-secondary: rgb(44, 31, 59);
-  --color-secondary-dark: rgb(38, 27, 51);
-  --color-grey: grey;
-  --color-grey-light: rgb(221, 221, 221);
-}
 
 .App {
   text-align: center;
