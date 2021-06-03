@@ -21,3 +21,8 @@ ButtonWithIcon.args = {
   text: 'Button',
   icon: <BsFillAwardFill />,
 };
+
+export const ButtonOnlyIcon = Template.bind({});
+ButtonOnlyIcon.args = {
+  icon: <BsFillAwardFill />,
+};

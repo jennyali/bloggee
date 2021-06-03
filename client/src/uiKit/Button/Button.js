@@ -2,18 +2,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import './Button.css';
 
-const Button = ({
-  text,
-  theme = 'primary',
-  variant = 'default',
-  icon,
-  className,
-  onClick,
-  large,
-  small,
-  left,
-  right,
-}) => {
+const Button = ({ text, theme, variant, icon, className, onClick, large, small, isRight }) => {
   return (
     <button
       type="button"
@@ -28,14 +17,15 @@ const Button = ({
       )}
       onClick={onClick}
     >
-      {icon && left && <span className="btn_icon">{icon}</span>}
-      {icon && !left && !right && <span className="btn_icon">{icon}</span>}
+      {icon && !isRight && <span className="btn_icon">{icon}</span>}
       {text && (
-        <span className={classnames('btn_text', { '--right': right }, { '--left': left })}>
+        <span
+          className={classnames('btn_text', { '--right': isRight }, { '--left': icon && !isRight })}
+        >
           {text}
         </span>
       )}
-      {icon && right && <span className="btn_icon">{icon}</span>}
+      {icon && isRight && <span className="btn_icon">{icon}</span>}
     </button>
   );
 };
@@ -56,12 +46,11 @@ Button.propTypes = {
   onClick: PropTypes.func,
   large: PropTypes.bool,
   small: PropTypes.bool,
-  left: PropTypes.bool,
-  right: PropTypes.bool,
+  isRight: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  text: 'Button',
+  text: null,
   theme: 'primary',
   variant: 'default',
   icon: null,
@@ -69,8 +58,7 @@ Button.defaultProps = {
   onClick: null,
   large: false,
   small: false,
-  left: false,
-  right: false,
+  isRight: false,
 };
 
 export default Button;
