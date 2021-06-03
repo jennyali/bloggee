@@ -1,16 +1,23 @@
-import ButtonComponent from './Button';
+import React from 'react';
+
+import { BsFillAwardFill } from 'react-icons/bs';
+import Button from './Button';
+
+const Template = (args) => <Button {...args} />;
 
 export default {
   title: 'Button',
-  component: ButtonComponent,
+  component: Button,
 };
 
-const Template = (args) => <ButtonComponent {...args} />;
+export const ButtonJustText = Template.bind({});
+ButtonJustText.args = {
+  text: 'Button',
+  theme: 'primary',
+};
 
-export const Button = Template;
-
-export const ButtonWithText = Template.bind({});
-
-ButtonWithText.args = {
-  text: 'Foo',
+export const ButtonWithIcon = Template.bind({});
+ButtonWithIcon.args = {
+  text: 'Button',
+  icon: <BsFillAwardFill />,
 };

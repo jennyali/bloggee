@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import './button.css';
+import './Button.css';
+import '../../App.css';
 
 const Button = ({
   text,
-  type,
+  theme = 'primary',
   variant = 'default',
   icon,
   className,
@@ -16,12 +17,13 @@ const Button = ({
 }) => {
   return (
     <button
+      type="button"
       className={classnames(
         'btn',
         className,
-        type,
+        theme,
         variant,
-        { istype: type },
+        { '--istype': variant },
         { '--large': large },
         { '--small': small }
       )}
@@ -41,14 +43,13 @@ const Button = ({
 
 Button.propTypes = {
   text: PropTypes.string,
-  type: PropTypes.oneOf([
+  theme: PropTypes.oneOf([
     'primary',
     'primary-invert',
     'secondary',
     'secondary-invert',
     'grey',
     'grey-altcolor',
-    'submit',
   ]),
   variant: PropTypes.oneOf(['default', 'flat', 'transparent']),
   icon: PropTypes.element,
@@ -62,7 +63,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   text: 'Button',
-  type: 'primary',
+  theme: 'primary',
   variant: 'default',
   icon: null,
   className: '',
