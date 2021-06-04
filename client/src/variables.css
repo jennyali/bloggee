@@ -1,3 +1,7 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
 :root {
   --color-primary: rgb(163, 13, 83);
   --color-secondary: rgb(44, 31, 59);
