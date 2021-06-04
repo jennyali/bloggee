@@ -18,27 +18,33 @@ const Pagination = ({ onNextPage, onPrevPage, currentPage, totalPages, className
 
   const hasNextButton = currentPage < totalPages;
   const hasPreviousButton = currentPage !== 1;
+  const errorMsg = currentPage > totalPages || currentPage <= 0;
 
   return (
     <div className={classnames('pagination', className)}>
-      {hasPreviousButton && (
-        <Button
-          icon={<BsChevronDoubleLeft />}
-          className="pagination__button pagination__previous-button previous"
-          type="grey-altcolor"
-          variant="transparent"
-          onClick={onPrevPage}
-        />
-      )}
-      <div className="pagination__pages">{renderPageNums}</div>
-      {hasNextButton && (
-        <Button
-          icon={<BsChevronDoubleRight />}
-          className="pagination__button pagination__next-button next"
-          type="grey-altcolor"
-          variant="transparent"
-          onClick={onNextPage}
-        />
+      {errorMsg && <span>Error!:current page exceeds total pages OR currentPage is 0 or less</span>}
+      {!errorMsg && (
+        <>
+          {hasPreviousButton && (
+            <Button
+              icon={<BsChevronDoubleLeft />}
+              className="pagination__button pagination__previous-button previous"
+              type="grey-altcolor"
+              variant="transparent"
+              onClick={onPrevPage}
+            />
+          )}
+          <div className="pagination__pages">{renderPageNums}</div>
+          {hasNextButton && (
+            <Button
+              icon={<BsChevronDoubleRight />}
+              className="pagination__button pagination__next-button next"
+              type="grey-altcolor"
+              variant="transparent"
+              onClick={onNextPage}
+            />
+          )}
+        </>
       )}
     </div>
   );
