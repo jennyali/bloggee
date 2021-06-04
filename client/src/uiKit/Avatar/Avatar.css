@@ -1,0 +1,13 @@
+
+.avatar.--default {
+  max-width: 80px;
+}
+
+.avatar.--small {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.avatar.--large {
+  max-width: 120px;
+}
