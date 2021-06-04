@@ -6,18 +6,16 @@ import './Logo.css';
 
 const Logo = ({ size }) => {
   return (
-    <>
-      <img
-        className={classnames(
-          'logo',
-          { '--large': size === 'large' },
-          { '--small': size === 'small' },
-          { '': size === 'default' }
-        )}
-        src={logoImg}
-        alt="Logo"
-      />
-    </>
+    <img
+      className={classnames(
+        'logo',
+        { '--large': size === 'large' },
+        { '--small': size === 'small' },
+        { '': size === 'default' }
+      )}
+      src={logoImg}
+      alt="Logo"
+    />
   );
 };
 
