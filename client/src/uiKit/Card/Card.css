@@ -1,0 +1,62 @@
+.card {
+  -webkit-box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.15); 
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.15);
+  display: inline-flex;
+  width: fit-content;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.card.pill {
+  border-radius: 10px;
+}
+
+.card.onHover:hover {
+  box-shadow: none;
+  top: 3px;
+}
+
+.card.default {
+  padding: 10px 20px;
+}
+
+.card.large {
+  padding: 20px 30px;
+}
+
+.card.xlarge {
+  padding: 30px 40px;
+}
+
+/* ------ Primary color ------- */
+
+.primary {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.primary-invert {
+  background-color: white;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.secondary {
+  background-color: var(--color-secondary);
+  color: white;
+  border-color: var(--color-secondary);
+}
+
+.secondary-invert {
+  background-color: white;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.grey,
+.grey-altcolor {
+  background-color: white;
+  color: var(--color-grey);
+  border-color: var(--color-grey);
+}
