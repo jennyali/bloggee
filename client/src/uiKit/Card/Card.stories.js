@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Card from './Card';
+import Avatar from '../Avatar';
 
 const Template = (args) => <Card {...args} />;
 
@@ -9,9 +10,16 @@ export default {
   component: Card,
 };
 
-export const CardExample = Template.bind({});
-CardExample.args = {
+export const CardExampleOne = Template.bind({});
+CardExampleOne.args = {
   props: {
-    children: 'New content added.',
+    children: <Avatar />,
+  },
+};
+
+export const CardExampleTwo = Template.bind({});
+CardExampleTwo.args = {
+  props: {
+    children: 'Content goes here.',
   },
 };
