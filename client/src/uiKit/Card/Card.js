@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import './Card.css';
 
-const Card = ({ props, theme, pill, hasHover, padding }) => {
+const Card = ({ props, theme, pill, hasHover, padding, className }) => {
   return (
-    <div className={classnames('card', theme, { pill }, { onHover: hasHover }, padding)}>
+    <div className={classnames('card', className, theme, { pill }, { onHover: hasHover }, padding)}>
       {props.children}
     </div>
   );
@@ -24,6 +24,7 @@ Card.propTypes = {
   pill: PropTypes.bool,
   hasHover: PropTypes.bool,
   padding: PropTypes.oneOf(['default', 'large', 'xlarge']),
+  className: PropTypes.string,
 };
 
 Card.defaultProps = {
@@ -35,6 +36,7 @@ Card.defaultProps = {
   pill: true,
   hasHover: false,
   padding: 'default',
+  className: '',
 };
 
 export default Card;
