@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import Button from '../uiKit/Button';
+import { HiOutlineMenu } from 'react-icons/hi';
+import { BsX } from 'react-icons/bs';
+import Button from '../../uiKit/Button';
+import Logo from '../../uiKit/Logo';
 import './SideNavigation.css';
 
 const SideNavigation = ({ closeIcon, menuIcon, logo, children }) => {
@@ -54,9 +57,9 @@ SideNavigation.propTypes = {
 };
 
 SideNavigation.defaultProps = {
-  closeIcon: null,
-  menuIcon: null,
-  logo: null,
+  closeIcon: <BsX />,
+  menuIcon: <HiOutlineMenu />,
+  logo: <Logo />,
   children: null,
 };
 
