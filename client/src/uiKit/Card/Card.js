@@ -4,7 +4,7 @@ import './Card.css';
 
 const Card = ({ props, theme, pill, hasHover, padding, className }) => {
   return (
-    <div className={classnames('card', className, theme, { pill }, { onHover: hasHover }, padding)}>
+    <div className={classnames('card', className, theme, { pill }, { hasHover }, padding)}>
       {props.children}
     </div>
   );
