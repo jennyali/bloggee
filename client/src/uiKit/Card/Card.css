@@ -11,7 +11,7 @@
   border-radius: 10px;
 }
 
-.card.onHover:hover {
+.card.hasHover:hover {
   box-shadow: none;
   top: 3px;
 }
