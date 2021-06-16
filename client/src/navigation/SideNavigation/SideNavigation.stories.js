@@ -5,7 +5,7 @@ import SideNavigation from './SideNavigation';
 const Template = (args) => <SideNavigation {...args} />;
 
 export default {
-  title: 'Navigation',
+  title: 'Side Navigation',
   component: SideNavigation,
 };
 
